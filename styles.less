@@ -1,0 +1,108 @@
+// https://lesscss.org/
+
+.item1 { grid-area: step1; background: linear-gradient(
+    to right,
+    #6f7280,
+    #2a2c3c,
+    #181827,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+  background-size: 400% 400%;
+  animation: body 10s infinite ease-in-out;
+color: #fff;
+font-size: 20px;
+font-weight: bold;}
+.item2 { grid-area: step2; background: linear-gradient(
+    to right,
+    #6f7280,
+    #2a2c3c,
+    #181827,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+  background-size: 400% 400%;
+  animation: body 10s infinite ease-in-out;
+color: #fff;
+font-size: 20px;
+font-weight: bold;}
+.item3 { grid-area: child1-step1; }
+.item4 { grid-area: child1-step2; }
+.item5 { grid-area: child2-step2; }
+.item6 { grid-area: child3-step2; }
+.item7 { grid-area: child4-step2; }
+.item8 { grid-area: child5-step2; }
+.item9 { grid-area: child6-step2; }
+
+.grid-container {
+display: grid;
+grid-template-areas:
+    'step1 step2 step2 step2'
+    'child1-step1 child4-step2 child5-step2 child6-step2'
+    'child1-step1 child1-step2 child2-step2 child3-step2';
+gap: 10px;
+background-color: #fff;
+padding: 10px;
+}
+
+.grid-container > div {
+background-color: #fafafa;
+text-align: center;
+padding: 20px 0;
+font-size: 30px;
+}
+.item3, .item4, .item5, .item6, .item7, .item8, .item9{
+    display: block;
+    position: relative;
+    background-color: #f2f8f9;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     z-index: -1;
+    //     top: -8px;
+    //     right: -8px;
+    //     background: #fafafa;
+    //     height: 32px;
+    //     width: 32px;
+    //     border-radius: 32px;
+    //     transform: scale(1);
+    //     transform-origin: 50% 50%;
+    //     transition: transform 0.25s ease-out;
+    // }
+
+    // &:hover:before {
+    //     transform: scale(2);
+    // }
+    .back{
+        display: none;
+    }
+    .front{
+        display: block;
+    }
+}
+.item3:hover, .item4:hover, .item5:hover, .item6:hover, .item7:hover, .item8:hover, .item9:hover{
+    display: flex;
+    background-color: #fff3f5;
+    align-items: center;
+    text-align: center !important;
+    justify-content: center;
+    .front{
+        display: none;
+    }
+    .back{
+        display: block;
+        text-align: center;
+    }
+}
+
+.btn, btn-login{
+  display: block;
+}
